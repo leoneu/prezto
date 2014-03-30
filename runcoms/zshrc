@@ -13,7 +13,12 @@ fi
 # Customize to your needs...
 
 # z - jump around
-. `brew --prefix`/etc/profile.d/z.sh
+if [[ "$OSTYPE" == darwin* ]]; then
+   . `brew --prefix`/etc/profile.d/z.sh
+fi
+if [[ "$OSTYPE" == linux* ]]; then
+   . /usr/lib/z.sh
+fi
 
 # Go Language
 GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
