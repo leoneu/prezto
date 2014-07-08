@@ -23,8 +23,9 @@ fi
 # Go Language
 GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
 G4=$GODEV/src/g4/gopath # Put G4 in a different workspace.
-export GOPATH=$GODEV:$G4 # List all the workspaces.
-export PATH=/usr/local/go/bin:$GODEV/bin:$G4/bin:$PATH # Find the executables.
+export GOPATH=$GODEV #:$G4 # List all the workspaces.
+#export PATH=/usr/local/go/bin:$GODEV/bin:$G4/bin:$PATH # Find the executables.
+export PATH=/usr/local/go/bin:$GODEV/bin:$PATH # Find the executables.
 
 # Run local godoc.
 alias lgodoc='godoc -http=":6060" -play=true'
