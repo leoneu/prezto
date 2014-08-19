@@ -42,7 +42,3 @@ export PATH=.:$HOME/bin:$HOME/scripts:$PATH
 
 # Servers
 alias monster="ssh monster -t tmux a"
-
-# The next line updates PATH for the Google Cloud SDK.
-source $HOME/google-cloud-sdk/path.zsh.inc
-source $HOME/google-cloud-sdk/completion.zsh.inc
