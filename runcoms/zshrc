@@ -31,7 +31,6 @@ export PATH=/usr/local/go/bin:$GODEV/bin:$PATH # Find the executables.
 
 # Python
 export PYTHONPATH=$HOME/code/python:$PYTHONPATH
-export PYTHONPATH=$HOME/code/ac-science-py:$PYTHONPATH
 
 # Run local godoc.
 alias lgodoc='godoc -http=":6060" -play=true'
