@@ -43,7 +43,7 @@ if [ -d "$x/misc/bash/go" ]; then
 fi
 
 # Some additional paths.
-export PATH=.:$HOME/bin:$HOME/scripts:$HOME/dotfiles/bin:$PATH
+export PATH=.:$HOME/bin:$HOME/scripts:$HOME/dotfiles/bin:/usr/local/bin:$PATH
 
 # Servers
 alias monster="ssh monster -t tmux a"
