@@ -22,6 +22,9 @@ if [[ "$OSTYPE" == linux* ]]; then
    . /usr/lib/z.sh
 fi
 
+# Set TERM (Had to do this to get emacs colors to work in tmux)
+export TERM=screen-256color-bce
+
 # Go Language
 GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
 G4=$GODEV/src/g4/gopath # Put G4 in a different workspace.
