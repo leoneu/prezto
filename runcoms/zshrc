@@ -50,11 +50,19 @@ export PATH=.:$HOME/bin:$HOME/scripts:$HOME/dotfiles/bin:/usr/local/bin:$PATH
 
 # Servers
 alias monster="ssh monster -t tmux a"
-alias atria="gcloud compute ssh atria"
+alias atria="gcloud compute ssh atria --ssh-flag=-AY"
 
 # Debian Backports
 alias apti="sudo apt-get -t wheezy-backports install"
 
+
+### GCLOUD
+
 # The next line updates PATH for the Google Cloud SDK.
 source $HOME/google-cloud-sdk/path.zsh.inc
 source $HOME/google-cloud-sdk/completion.zsh.inc
+
+# GCloud
+alias gdisks="gcloud compute disks list --format json | jq '. | .[].name'"
+alias snap="gcloud compute disks snapshot"
+alias snapall="gcloud compute disks snapshot $(gdisks)"
