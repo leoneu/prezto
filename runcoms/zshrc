@@ -12,8 +12,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-
 # z - jump around
 if [[ "$OSTYPE" == darwin* ]]; then
    . `brew --prefix`/etc/profile.d/z.sh
@@ -66,3 +64,4 @@ source $HOME/google-cloud-sdk/completion.zsh.inc
 alias gdisks="gcloud compute disks list --format json | jq '. | .[].name'"
 alias snap="gcloud compute disks snapshot"
 alias snapall="gcloud compute disks snapshot $(gdisks)"
+
