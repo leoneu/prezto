@@ -21,7 +21,13 @@ if [[ "$OSTYPE" == linux* ]]; then
 fi
 
 # Set TERM (Had to do this to get emacs colors to work in tmux)
+# but this breaks gnome-terminal in ubuntu!
 export TERM=screen-256color-bce
+
+# use xterm in ubuntu
+if [[ "$DESKTOP_SESSION" == ubuntu ]]; then
+   export TERM=xterm
+fi
 
 # Go Language
 GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
@@ -57,8 +63,10 @@ alias apti="sudo apt-get -t wheezy-backports install"
 ### GCLOUD
 
 # The next line updates PATH for the Google Cloud SDK.
-source $HOME/google-cloud-sdk/path.zsh.inc
-source $HOME/google-cloud-sdk/completion.zsh.inc
+if [[ -d $HOME/google-cloud-sdk ]]; then
+    source $HOME/google-cloud-sdk/path.zsh.inc
+    source $HOME/google-cloud-sdk/completion.zsh.inc
+fi
 
 # GCloud
 alias gdisks="gcloud compute disks list --format json | jq '. | .[].name'"

@@ -1,0 +1,16 @@
+# How yo maintain a fork.
+
+cd ~/tmp
+git clone https://github.com/sorin-ionescu/prezto.git
+cd prezto
+git pull && git submodule update --init --recursive
+
+# Merge master repo to fork.
+# See http://blog.caplin.com/2013/09/18/merging-two-git-repositories/
+
+cd $HOME/.zprezto
+git remote add prezto ~/tmp/prezto
+git fetch prezto
+
+git branch prezto-master prezto/master
+git merge prezto-master
