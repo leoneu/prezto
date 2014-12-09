@@ -11,15 +11,17 @@
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
 fi
+
+# Needed for gnome terminal to work.
+export TERM=xterm-256color
 
 if [[ "$OSTYPE" == darwin* ]]; then
    # z - jump around
    . `brew --prefix`/etc/profile.d/z.sh
 
-   # do we still need this for tmux on osx?
-   export TERM=screen-256color-bce
+   # do we still need this for tmux on osx? Commenting out for now.
+   # export TERM=screen-256color-bce
 fi
 if [[ "$OSTYPE" == linux* ]]; then
    # z - jump around
