@@ -60,14 +60,19 @@ alias apti="sudo apt-get -t wheezy-backports install"
 
 ### GCLOUD
 
-# Python3 is not supporetd.
-export CLOUDSDK_PYTHON="/usr/bin/python2"
+# Python3 is not supported. Arch Linux default is python3.
+PYTHON_VER=$(python -c 'import sys; print(sys.version_info[0])')
+if [ $PYTHON_VER = "3" ]; then
+    PYTHON2="/usr/bin/python2"
+    if [ -e $PYTHON2 ]; then
+       export CLOUDSDK_PYTHON=$PYTHON2
+    fi
+fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [[ -d $HOME/google-cloud-sdk ]]; then
     source $HOME/google-cloud-sdk/path.zsh.inc
     source $HOME/google-cloud-sdk/completion.zsh.inc
-
 fi
 
 # GCloud
