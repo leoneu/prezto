@@ -104,7 +104,7 @@ alias sl='ls'            # I often screw this up.
 
 # Grep
 if zstyle -t ':prezto:module:utility:grep' color; then
-  export GREP_COLOR='37;45'
+#  export GREP_COLOR='37;45'
   alias grep="$aliases[grep] --color=auto"
 fi
 
