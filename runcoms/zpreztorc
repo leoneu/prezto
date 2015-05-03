@@ -34,6 +34,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'homebrew' \
   'osx' \
+  'ssh' \
   'pacman' \
   'git' \
   'rsync' \
