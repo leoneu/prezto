@@ -48,6 +48,9 @@ if [ -d "$x/misc/bash/go" ]; then
   source $x/misc/bash/go
 fi
 
+# Appengine / Go
+export PATH=$PATH:$HOME/Packages/go_appengine
+
 # Some additional paths.
 export PATH=.:$HOME/bin:$HOME/scripts:$HOME/dotfiles/bin:/usr/local/bin:$PATH
 
