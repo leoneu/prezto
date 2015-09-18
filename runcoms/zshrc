@@ -16,17 +16,8 @@ fi
 # Needed for gnome terminal to work.
 export TERM=xterm-256color
 
-if [[ "$OSTYPE" == darwin* ]]; then
-   # z - jump around
-   . `brew --prefix`/etc/profile.d/z.sh
-
-   # do we still need this for tmux on osx? Commenting out for now.
-   # export TERM=screen-256color-bce
-fi
-if [[ "$OSTYPE" == linux* ]]; then
-   # z - jump around
-   . /usr/lib/z.sh
-fi
+# z - jump around
+. ~/dotfiles/bin/z.sh
 
 # Go Language
 GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
