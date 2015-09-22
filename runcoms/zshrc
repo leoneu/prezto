@@ -19,15 +19,13 @@ export TERM=xterm-256color
 # z - jump around
 . ~/dotfiles/bin/z.sh
 
-# Go Language
-GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
-G4=$GODEV/src/g4/gopath # Put G4 in a different workspace.
-export GOPATH=$GODEV #:$G4 # List all the workspaces.
-#export PATH=/usr/local/go/bin:$GODEV/bin:$G4/bin:$PATH # Find the executables.
-export PATH=/usr/local/go/bin:$GODEV/bin:$PATH # Find the executables.
-
 # Python
 export PYTHONPATH=$HOME/code/python:$PYTHONPATH
+
+# Go Language
+GODEV=$HOME/code/go # Go std dirs {src, bin, pkg} go here.
+export GOPATH=$GODEV #:$G4 # List all the workspaces.
+export PATH=/usr/local/go/bin:$GODEV/bin:$PATH # Find the executables.
 
 # Run local godoc.
 alias lgodoc='godoc -http=":6060" -play=true'
@@ -47,10 +45,6 @@ export PATH=.:$HOME/bin:$HOME/scripts:$HOME/dotfiles/bin:/usr/local/bin:$PATH
 
 # Servers
 alias monster="ssh monster -t tmux a"
-alias atria="gcloud compute ssh atria --ssh-flag=-AY"
-
-# Debian Backports
-alias apti="sudo apt-get -t wheezy-backports install"
 
 ### GCLOUD
 
@@ -73,7 +67,7 @@ fi
 alias gdisks="gcloud compute disks list --format json | jq '. | .[].name'"
 alias snap="gcloud compute disks snapshot"
 
-# Extract from most coomon files.
+# Extract from most common files.
 extract () {
     if [ -f $1 ] ; then
       case $1 in
@@ -94,3 +88,8 @@ extract () {
          echo "'$1' is not a valid file"
      fi
 }
+
+# Read local startup script.
+if [[ -f $HOME/.zshrc_local ]]; then
+    source $HOME/.zshrc_local
+fi
